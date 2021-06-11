@@ -8,7 +8,11 @@ export default function App() {
   const [taskItems, setTaskItems] = useState([]);
 
   const handleAddTask =()=>{
-    setTaskItems([...taskItems, task]);
+
+    if(task === null || task === undefined)
+      alert("Task cannot be empty")
+    else
+      setTaskItems([...taskItems, task]);
     setTask(null);
   }
 
